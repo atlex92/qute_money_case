@@ -8,44 +8,221 @@
     * { box-sizing: border-box; }
     body {
       font-family: system-ui, -apple-system, sans-serif;
-      line-height: 1.6;
-      max-width: 720px;
+      line-height: 1.65;
+      max-width: 640px;
       margin: 0 auto;
-      padding: 2rem 1rem;
+      padding: 2.5rem 1.25rem;
       color: #1a1a1a;
     }
-    h1 { font-size: 1.75rem; margin-top: 0; }
-    h2 { font-size: 1.25rem; margin-top: 2rem; color: #333; }
-    section { margin-bottom: 2rem; }
-    .meta { color: #666; font-size: 0.95rem; }
+    header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 0.25rem 0;
+      letter-spacing: -0.02em;
+    }
+    .tagline {
+      color: #666;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #888;
+      margin: 0 0 0.75rem 0;
+    }
+    p {
+      margin: 0 0 0.75rem 0;
+    }
+    p:last-child { margin-bottom: 0; }
+    ul {
+      margin: 0 0 0.75rem 0;
+      padding-left: 1.25rem;
+    }
+    .tech-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .tech-list li {
+      padding: 0.35rem 0;
+      border-bottom: 1px solid #f0f0f0;
+      display: flex;
+      gap: 1rem;
+    }
+    .tech-list li:last-child { border-bottom: none; }
+    .tech-list dt, .tech-list dd { margin: 0; }
+    .tech-list .term {
+      flex: 0 0 8rem;
+      color: #555;
+      font-size: 0.9rem;
+    }
+    .tech-list .value { font-size: 0.95rem; }
+    .screenshots-intro { margin-bottom: 1rem; }
+    .screenshots {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .screenshots img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    .screenshots figure {
+      margin: 0;
+    }
+    .screenshots figcaption {
+      margin-top: 0.35rem;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    .video-wrap { margin-top: 0.5rem; }
+    .video-wrap video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #eee;
+    }
+    .video-caption {
+      margin-top: 0.35rem;
+      font-size: 0.85rem;
+      color: #666;
+      margin-bottom: 0;
+    }
+    footer {
+      margin-top: 2.5rem;
+      padding-top: 1rem;
+      font-size: 0.8rem;
+      color: #999;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Qute Money</h1>
-    <p class="meta">Кейс из портфолио</p>
+    <h1>Мобильное приложение Qute Money</h1>
+    <p class="tagline">Удобное ведение личных финансов</p>
   </header>
 
   <section>
     <h2>О проекте</h2>
-    <p>Краткое описание приложения и цели проекта — можно добавить позже.</p>
+    <p>Qute Money — мой личный пет-проект. Это мобильное приложение для ведения личных финансов. Главная его особенность — минималистичность интерфейса и удобство добавления записей, а также полезная инфографика для оценки уровня потребления при планировании семейного бюджета.</p>
   </section>
 
   <section>
-    <h2>Технические особенности</h2>
-    <p>Стек, архитектура, интересные решения — заполнить по мере готовности.</p>
+    <h2>Цели</h2>
+    <p>Главной целью проекта является получение дополнительного опыта коммерческой разработки на Qt6, совершенствование навыков создания эффективных пользовательских интерфейсов на языке QML в связке с C++.</p>
+    <p>Приложение планируется к релизу на платформе Android на площадках RuStore и Play Market, а после оптимизаций и доработок — в App Store. В будущем возможна монетизация для дополнительного источника дохода.</p>
+  </section>
+
+  <section>
+    <h2>Функционал</h2>
+    <ul>
+      <li>Ручное занесение расходов по категориям</li>
+      <li>Создание и редактирование собственных категорий</li>
+      <li>Статистика трат по категориям и периодам</li>
+      <li>Информативная инфографика (в процессе)</li>
+      <li>Бэкапы (не реализовано)</li>
+      <li>Геймификация для поощрения пользователя заносить расходы (не реализовано)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Особенности</h2>
+    <p>Фокус на современном UI/UX и удобстве: добавление трат должно быть быстрым в повседневных сценариях. Минимум кликов, ключевая информация на виду, удобство одной рукой и на ходу.</p>
+    <p>Часто используемые элементы вынесены на видное место; данные по уже внесённым расходам используются для подсказок — например, популярные категории под рукой, повторяющиеся траты в категории предлагаются автоматически.</p>
+  </section>
+
+  <section>
+    <h2>Технические детали</h2>
+    <ul class="tech-list">
+      <li><span class="term">Платформа</span><span class="value">Qt 6.10.1</span></li>
+      <li><span class="term">Интерфейс</span><span class="value">QML</span></li>
+      <li><span class="term">Логика</span><span class="value">C++17</span></li>
+      <li><span class="term">Хранение</span><span class="value">SQLite (собственная обёртка над QSql)</span></li>
+    </ul>
   </section>
 
   <section>
     <h2>Скриншоты</h2>
-    <p>Здесь будут фото экранов мобильного приложения и, при желании, анимации интерфейса.</p>
-    <!-- Пример добавления изображений из папки images/:
-    <img src="images/screen1.png" alt="Главный экран" width="280">
-    -->
+    <p class="screenshots-intro">Экраны приложения и интерфейс.</p>
+    <div class="screenshots">
+      <figure>
+        <img src="images/главный_экран_светлая_тема.png" alt="Главный экран, светлая тема" width="280">
+        <figcaption>Главный экран, светлая тема</figcaption>
+      </figure>
+      <figure>
+        <img src="images/главный_экран_темная_тема.png" alt="Главный экран, тёмная тема" width="280">
+        <figcaption>Главный экран, тёмная тема</figcaption>
+      </figure>
+      <figure>
+        <img src="images/главный_экран_лента_записей_светлая_тема.png" alt="Лента записей" width="280">
+        <figcaption>Лента записей</figcaption>
+      </figure>
+      <figure>
+        <img src="images/главный_экран_панель_категорий_светлая_тема.png" alt="Панель категорий" width="280">
+        <figcaption>Панель категорий</figcaption>
+      </figure>
+      <figure>
+        <img src="images/главный_экран_статистика_по_категориям_светлая_тема.png" alt="Статистика по категориям" width="280">
+        <figcaption>Статистика по категориям</figcaption>
+      </figure>
+      <figure>
+        <img src="images/добавление_траты_светлая_тема.png" alt="Добавление траты" width="280">
+        <figcaption>Добавление траты</figcaption>
+      </figure>
+      <figure>
+        <img src="images/добавление_траты_темная_тема.png" alt="Добавление траты, тёмная тема" width="280">
+        <figcaption>Добавление траты, тёмная тема</figcaption>
+      </figure>
+      <figure>
+        <img src="images/добавление_траты_календарь_светлая_тема.png" alt="Выбор даты, календарь" width="280">
+        <figcaption>Календарь</figcaption>
+      </figure>
+      <figure>
+        <img src="images/добавление_траты_выбор_категории_светлая_тема.png" alt="Выбор категории" width="280">
+        <figcaption>Выбор категории</figcaption>
+      </figure>
+      <figure>
+        <img src="images/добавление_траты_выбор_года_светлая_тема.png" alt="Выбор года" width="280">
+        <figcaption>Выбор года</figcaption>
+      </figure>
+      <figure>
+        <img src="images/настройки_светлая_тема.png" alt="Настройки, светлая тема" width="280">
+        <figcaption>Настройки, светлая тема</figcaption>
+      </figure>
+      <figure>
+        <img src="images/настройки_темная_тема.png" alt="Настройки, тёмная тема" width="280">
+        <figcaption>Настройки, тёмная тема</figcaption>
+      </figure>
+    </div>
   </section>
 
-  <footer class="meta" style="margin-top: 3rem;">
-    <p>Портфолио-кейс · GitHub Pages</p>
+  <section>
+    <h2>Видео</h2>
+    <p class="screenshots-intro">Демонстрация интерфейса и сценариев использования.</p>
+    <div class="video-wrap">
+      <video controls width="280" preload="metadata" poster="">
+        <source src="video/демо_видео.mp4" type="video/mp4">
+        Ваш браузер не поддерживает воспроизведение видео.
+      </video>
+      <p class="video-caption">Демо-видео приложения</p>
+    </div>
+  </section>
+
+  <footer>
+    Портфолио-кейс · GitHub Pages
   </footer>
 </body>
 </html>
